@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lyu Lab | Rutgers University</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Helvetica, Arial, sans-serif;
+            color: #222;
+            background: #ffffff;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.97);
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .nav-container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.65;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 78vh;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(rgba(20, 20, 20, 0.30),
+                                rgba(20, 20, 20, 0.50)),
+                url("https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1800&q=80")
+                center/cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 1180px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 80px 28px;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            line-height: 1.05;
+            margin-bottom: 22px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            max-width: 760px;
+            font-size: 1.35rem;
+            line-height: 1.6;
+            margin-bottom: 34px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 22px;
+            border: 1px solid white;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .button:hover {
+            background: white;
+            color: #222;
+        }
+
+        /* General sections */
+        section {
+            padding: 90px 28px;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 2.6rem;
+            line-height: 1.2;
+            margin-bottom: 22px;
+        }
+
+        .intro {
+            max-width: 820px;
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 45px;
+        }
+
+        /* Research cards */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+
+        .research-card {
+            border-top: 2px solid #222;
+            padding-top: 20px;
+        }
+
+        .research-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .research-card p {
+            color: #555;
+        }
+
+        /* People */
+        .people-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .pi-photo {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            background: #eee;
+        }
+
+        .person-title {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* Publications */
+        .publication {
+            padding: 24px 0;
+            border-top: 1px solid #ddd;
+        }
+
+        .publication:last-child {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .publication-year {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #777;
+            margin-bottom: 5px;
+        }
+
+        .publication-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .publication-journal {
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* News */
+        .news-item {
+            padding: 24px 0;
+            border-top: 1px solid #ddd;
+        }
+
+        .news-date {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #777;
+            margin-bottom: 6px;
+        }
+
+        .news-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 5px;
+        }
+
+        /* Join us */
+        .join-section {
+            background: #f6f6f6;
+        }
+
+        .join-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+        }
+
+        .join-box h3 {
+            font-size: 1.35rem;
+            margin-bottom: 14px;
+        }
+
+        .join-box p {
+            color: #555;
+            margin-bottom: 18px;
+        }
+
+        .contact-line {
+            margin-bottom: 12px;
+        }
+
+        .contact-line strong {
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        /* Footer */
+        footer {
+            background: #181818;
+            color: #ddd;
+            padding: 35px 28px;
+        }
+
+        .footer-inner {
+            max-width: 1180px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        /* Mobile */
+        @media (max-width: 800px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                min-height: 70vh;
+            }
+
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+
+            .research-grid,
+            .join-grid,
+            .people-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Lyu Lab</div>
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#research">Research</a>
+                <a href="#people">People</a>
+                <a href="#publications">Publications</a>
+                <a href="#news">News</a>
+                <a href="#join">Join Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+
+            <h1>Mengze Lyu Lab</h1>
+
+            <p>
+                Decoding how host–microbe interactions shape immune
+                responses in cancer and inflammatory disease.
+            </p>
+
+            <div class="buttons">
+                <a class="button" href="#research">Our Research</a>
+                <a class="button" href="#join">Join the Lab</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Research introduction -->
+    <section>
+        <div class="container">
+
+            <div class="section-label">Our research</div>
+
+            <h2>
+                How do host–microbe interactions shape immunity and cancer?
+            </h2>
+
+            <p class="intro">
+                Our laboratory studies how microbial signals and
+                antigen-specific immune responses interact to regulate
+                tissue homeostasis, inflammation, and tumor immunity.
+                We combine mouse genetics, immunology, microbiology,
+                single-cell approaches, and translational studies to
+                uncover mechanisms that connect the microbiome with
+                systemic immune responses.
+            </p>
+
+            <div class="research-grid">
+
+                <div class="research-card">
+                    <h3>Microbial metabolites and cancer</h3>
+                    <p>
+                        Understanding how metabolites produced or
+                        modified by intestinal microbes influence tumor
+                        growth and anti-tumor immunity.
+                    </p>
+                </div>
+
+                <div class="research-card">
+                    <h3>RORγt⁺ immune cells</h3>
+                    <p>
+                        Defining the interactions among RORγt⁺ antigen-
+                        presenting cells, regulatory T cells, and other
+                        immune populations in health and disease.
+                    </p>
+                </div>
+
+                <div class="research-card">
+                    <h3>Antigen-specific immunity</h3>
+                    <p>
+                        Investigating how microbial antigens shape
+                        antigen-specific T-cell responses and immune
+                        tolerance.
+                    </p>
+                </div>
+
+                <div class="research-card">
+                    <h3>Human cancer and translational immunology</h3>
+                    <p>
+                        Extending mechanistic discoveries from experimental
+                        models to human cancers and therapeutic settings.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- People -->
+    <section id="people">
+        <div class="container">
+
+            <div class="section-label">People</div>
+
+            <h2>The Lyu Lab</h2>
+
+            <div class="people-grid">
+
+                <!-- Temporary placeholder -->
+                <img
+                    class="pi-photo"
+                    src="https://via.placeholder.com/700x700.png?text=Mengze+Lyu"
+                    alt="Mengze Lyu"
+                >
+
+                <div>
+                    <h3 style="font-size: 1.8rem;">
+                        Mengze Lyu, PhD
+                    </h3>
+
+                    <div class="person-title">
+                        Principal Investigator<br>
+                        Assistant Professor, Department of Medicine<br>
+                        Robert Wood Johnson Medical School<br>
+                        Rutgers University
+                    </div>
+
+                    <p>
+                        The Lyu Lab investigates how host–microbe
+                        interactions regulate immune tolerance,
+                        inflammation, and cancer. Our work integrates
+                        immunology, microbiology, mouse genetics,
+                        single-cell technologies, and translational
+                        approaches to understand how microbial signals
+                        influence immune decisions across tissues.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications">
+        <div class="container">
+
+            <div class="section-label">Publications</div>
+
+            <h2>Selected publications</h2>
+
+            <div class="publication">
+                <div class="publication-year">2026</div>
+                <div class="publication-title">
+                    B7 co-stimulation antagonizes RORγt+ regulatory
+                    T cells and immune tolerance in the intestine
+                </div>
+                <div class="publication-journal">
+                    Journal of Experimental Medicine
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="publication-year">2022</div>
+                <div class="publication-title">
+                    RORγt+ antigen-presenting cells and immune tolerance
+                    to the gut microbiota
+                </div>
+                <div class="publication-journal">
+                    Nature
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="publication-year">2020</div>
+                <div class="publication-title">
+                    Manganese is critical for antitumor immune responses
+                    via cGAS-STING and improves the efficacy of clinical
+                    immunotherapy
+                </div>
+                <div class="publication-journal">
+                    Cell Research
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- News -->
+    <section id="news">
+        <div class="container">
+
+            <div class="section-label">News</div>
+
+            <h2>Latest news</h2>
+
+            <div class="news-item">
+                <div class="news-date">2026</div>
+                <h3>Lyu Lab launches at Rutgers University</h3>
+                <p>
+                    The Lyu Lab begins its independent research program
+                    at Robert Wood Johnson Medical School.
+                </p>
+            </div>
+
+            <div class="news-item">
+                <div class="news-date">2026</div>
+                <h3>New paper published in JEM</h3>
+                <p>
+                    Our latest work investigates how B7 co-stimulation
+                    regulates RORγt⁺ regulatory T cells and intestinal
+                    immune tolerance.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Join + Contact -->
+    <section class="join-section" id="join">
+
+        <div class="container">
+
+            <div class="section-label">Join us</div>
+
+            <h2>
+                We are recruiting.
+            </h2>
+
+            <div class="join-grid">
+
+                <div class="join-box">
+
+                    <h3>Opportunities</h3>
+
+                    <p>
+                        We are interested in recruiting motivated
+                        postdoctoral fellows, graduate students, and
+                        research staff who are excited about
+                        immunology, microbiology, host–microbe
+                        interactions, and cancer biology.
+                    </p>
+
+                    <p>
+                        Prospective postdoctoral fellows are encouraged
+                        to send a CV, a brief statement of research
+                        interests, and contact information for references.
+                    </p>
+
+                </div>
+
+                <div class="join-box">
+
+                    <h3>Contact</h3>
+
+                    <div class="contact-line">
+                        <strong>Mengze Lyu, PhD</strong>
+                        Principal Investigator
+                    </div>
+
+                    <div class="contact-line">
+                        Department of Medicine<br>
+                        Robert Wood Johnson Medical School<br>
+                        Rutgers University
+                    </div>
+
+                    <div class="contact-line">
+                        New Brunswick, New Jersey
+                    </div>
+
+                    <div class="contact-line">
+                        Email:
+                        <a href="mailto:YOUR_EMAIL@rutgers.edu">
+                            YOUR_EMAIL@rutgers.edu
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
+            <p>
+                Lyu Lab · Rutgers University
+            </p>
+
+            <p>
+                © 2026 Mengze Lyu Lab
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
