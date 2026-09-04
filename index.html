@@ -577,8 +577,29 @@
     object-fit: cover;
     border-radius: 2px;
 }
+.news-gallery {
+            margin-top: 22px;
 
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
 
+            gap: 10px;
+
+            max-width: 520px;
+        }
+
+        .news-gallery img {
+    width: 100%;
+    height: 150px;
+
+    object-fit: cover;
+
+    border-radius: 2px;
+
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
         /* =========================================================
            JOIN US
         ========================================================= */
@@ -1474,11 +1495,39 @@
                             research program at Center for Advanced Biotechnology and Medicine.
 
                         </p>
-                        <img
-            class="news-image"
-            src="Lyulab_day0.jpg"
-            alt="Lyu Lab launches at Rutgers University"
-        >
+                        <div class="news-gallery">
+
+    <img
+        src="Lab-whole view 1.jpg"
+        alt="Lyu Lab laboratory space"
+        draggable="false"
+    >
+
+    <img
+        src="lab bench 1.jpg"
+        alt="Lyu Lab laboratory bench"
+        draggable="false"
+    >
+
+    <img
+        src="lab bench 2.jpg"
+        alt="Lyu Lab laboratory bench"
+        draggable="false"
+    >
+
+    <img
+        src="lab seats.jpg"
+        alt="Lyu Lab laboratory seating"
+        draggable="false"
+    >
+
+    <img
+        src="lab whoe view 2.jpg"
+        alt="Lyu Lab laboratory space"
+        draggable="false"
+    >
+
+</div>
 
                     </div>
 
