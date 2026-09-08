@@ -91,7 +91,7 @@
             font-weight: 700;
             letter-spacing: 0.02em;
             white-space: nowrap;
-            color:#CC0033;
+            color:#183B56;
         }
 
         .nav-links {
@@ -330,6 +330,10 @@
             background: #e6e6e6;
 
             border-radius: 2px;
+
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-drag: none;
         }
 
         .pi-name {
@@ -1029,10 +1033,11 @@
     <div>
 
     <img
-        class="pi-photo"
-        src="Lyu.jpg"
-        alt="Mengze Lyu"
-    >
+    class="pi-photo"
+    src="Lyu.jpg"
+    alt="Mengze Lyu"
+    draggable="false"
+>
 
 </div>
 
