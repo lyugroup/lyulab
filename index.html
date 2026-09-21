@@ -132,25 +132,45 @@
         ========================================================= */
 
         .hero {
-            min-height: 78vh;
+    min-height: 78vh;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
 
-            display: flex;
-            align-items: flex-end;
+    background: #102331 url("hero.png") center / cover no-repeat;
+}
 
-            position: relative;
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
 
-            background:
-                linear-gradient(
-                    rgba(15, 15, 15, 0.23),
-                    rgba(15, 15, 15, 0.58)
-                ),
-                url("hero.png")
-                center / cover no-repeat;
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
 
-            background-color: #b9b9b9;
-        }
-
+    background: linear-gradient(
+        rgba(15, 15, 15, 0.23),
+        rgba(15, 15, 15, 0.58)
+    );
+}
         .hero-content {
+           position: relative;
+            z-index: 2;
+            
             width: min(1180px, calc(100% - 56px));
             margin: 0 auto;
 
@@ -866,9 +886,26 @@
          HERO
     ========================================================== -->
 
-    <section class="hero" id="home">
+    <section class="hero" id="home" oncontextmenu="return false;">
 
-        <div class="hero-content">
+    <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="hero.png"
+        controlslist="nodownload noremoteplayback"
+        disablepictureinpicture
+        disableremoteplayback
+        aria-hidden="true"
+        tabindex="-1"
+    >
+        <source src="lyulab_background.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-content">
 
             <div class="hero-kicker">
                 Host–Microbe Interactions
