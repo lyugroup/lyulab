@@ -86,13 +86,17 @@
             gap: 30px;
         }
 
-        .logo {
-            font-size: 1.35rem;
-            font-weight: 700;
-            letter-spacing: 0.02em;
-            white-space: nowrap;
-            color:#243B53;
-        }
+       .logo {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo img {
+    display: block;
+    height: 56px;
+    width: auto;
+}
 
         .nav-links {
             display: flex;
@@ -856,9 +860,13 @@
 
         <div class="nav-container">
 
-            <a class="logo" href="#home">
-                Lyu Lab
-            </a>
+            <a class="logo" href="#home" aria-label="Lyu Lab homepage">
+    <img
+        src="lyu-lab-logo.png"
+        alt="Lyu Lab"
+        draggable="false"
+    >
+</a>
 
             <div class="nav-links">
 
