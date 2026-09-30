@@ -344,6 +344,10 @@
 
             margin-top: 50px;
         }
+        
+.people-layout + .people-layout {
+    margin-top: 70px;
+}
 
         .pi-photo {
             width: 100%;
@@ -638,10 +642,26 @@
         }
 
         @media (max-width: 600px) {
-            .news-gallery {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+
+    .news-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .people-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .people-layout + .people-layout {
+        margin-top: 50px;
+    }
+
+    .pi-photo {
+        width: 100%;
+        max-width: 330px;
+    }
+
+}
         /* =========================================================
            JOIN US
         ========================================================= */
@@ -1204,7 +1224,54 @@
 
             </div>
 
+          <!-- BUDOOR AL-AYDI -->
+
+        <div class="pi-grid">
+
+            <!-- HEADSHOT -->
+
+            <div>
+
+                <img
+                    class="pi-photo"
+                    src="budoorheadshot9-26.JPG"
+                    alt="Budoor Al-Aydi"
+                    draggable="false"
+                >
+
+            </div>
+
+
+            <!-- INFORMATION -->
+
+            <div>
+
+                <h3 class="pi-name">
+                    Budoor Al-Aydi
+                </h3>
+
+                <div class="pi-title">
+                    Research Specialist
+                </div>
+
+
+                <p class="bio">
+
+                    Budoor earned her B.A. in Biology with
+                    Specialized Honors and a minor in Neuroscience
+                    from Drew University. Her previous research
+                    experience spans neurobiology and structural
+                    biology, with interests in understanding the
+                    cellular and molecular mechanisms underlying
+                    disease.
+
+                </p>
+
+            </div>
+
         </div>
+
+    </div>
 
     </section>
 
