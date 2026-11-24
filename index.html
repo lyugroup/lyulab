@@ -564,48 +564,48 @@
            NEWS
         ========================================================= */
 
-        .news-list {
-            margin-top: 42px;
-        }
+       .news-list {
+    margin-top: 42px;
+}
 
-        .news-item {
-            display: grid;
+.news-item {
+    display: grid;
 
-            grid-template-columns: 150px 1fr;
+    grid-template-columns: 150px 1fr;
 
-            gap: 30px;
+    gap: 30px;
 
-            padding: 25px 0;
+    padding: 25px 0;
 
-            border-top: 1px solid #ddd;
-        }
+    border-top: 1px solid #ddd;
+}
 
-        .news-item:last-child {
-            border-bottom: 1px solid #ddd;
-        }
+.news-item:last-child {
+    border-bottom: 1px solid #ddd;
+}
 
-        .news-date {
-            font-size: 0.82rem;
-            font-weight: 600;
+.news-date {
+    font-size: 0.82rem;
+    font-weight: 600;
 
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 
-            color: #777;
-        }
+    color: #777;
+}
 
-        .news-title {
-            font-size: 1.15rem;
-            font-weight: 600;
+.news-title {
+    font-size: 1.15rem;
+    font-weight: 600;
 
-            margin-bottom: 5px;
-        }
+    margin-bottom: 5px;
+}
 
-        .news-text {
-            color: #555;
-        }
+.news-text {
+    color: #555;
+}
 
-        .news-image {
+.news-image {
     width: 25%;
     max-width: 520px;
     height: auto;
@@ -613,42 +613,85 @@
     object-fit: cover;
     border-radius: 2px;
 }
-        .news-gallery {
-            margin-top: 22px;
 
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
 
-            gap: 8px;
+/* Laboratory photos */
 
-            width: 100%;
-            max-width: 900px;
-        }
+.news-gallery {
+    margin-top: 22px;
 
-        .news-gallery img {
-            width: 100%;
-            height: auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
 
-            aspect-ratio: 4 / 3;
-            object-fit: cover;
+    gap: 8px;
 
-            border-radius: 2px;
+    width: 100%;
+    max-width: 900px;
+}
 
-            pointer-events: none;
-            user-select: none;
-            -webkit-user-drag: none;
-        }
+.news-gallery img {
+    width: 100%;
+    height: auto;
 
-        @media (max-width: 900px) {
-            .news-gallery {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
 
-    @media (max-width: 600px) {
+    border-radius: 2px;
+
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+
+/* Lab event photos */
+
+.news-event-gallery {
+    margin-top: 22px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    align-items: flex-start;
+}
+
+.news-event-gallery img {
+    height: 130px;
+    width: auto;
+    max-width: 100%;
+
+    object-fit: contain;
+
+    border-radius: 2px;
+
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+
+/* Responsive layout */
+
+@media (max-width: 900px) {
+
+    .news-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
 
     .news-gallery {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .news-event-gallery img {
+        height: 100px;
+        width: auto;
+        max-width: 100%;
     }
 
     .people-layout {
@@ -796,7 +839,7 @@
            MOBILE
         ========================================================= */
 
-        @media (max-width: 900px) {
+                @media (max-width: 900px) {
 
             .nav-container {
                 flex-direction: column;
@@ -868,6 +911,12 @@
                 gap: 6px;
             }
 
+            .news-event-gallery img {
+                height: 100px;
+                width: auto;
+                max-width: 100%;
+            }
+
         }
 
     </style>
@@ -876,7 +925,6 @@
 
 
 <body id="page-top">
-
 
     <!-- =========================================================
          NAVIGATION
@@ -1732,86 +1780,134 @@
          NEWS
     ========================================================== -->
 
-    <section id="news">
+   <section id="news">
 
-        <div class="container">
+    <div class="container">
 
-            <div class="section-label">
-                News
-            </div>
+        <div class="section-label">
+            News
+        </div>
 
-            <h2 class="section-title">
-                Latest News
-            </h2>
-
-
-            <div class="news-list">
+        <h2 class="section-title">
+            Latest News
+        </h2>
 
 
-                <article class="news-item">
+        <div class="news-list">
 
-                    <div class="news-date">
-                        July 2026
+
+            <!-- NOVEMBER 2026 -->
+
+            <article class="news-item">
+
+                <div class="news-date">
+                    November 2026
+                </div>
+
+                <div>
+
+                    <div class="news-title">
+                        Lab Get-Together
                     </div>
 
-                    <div>
+                    <p class="news-text">
 
-                        <div class="news-title">
-                            Lyu Lab launches at Rutgers University
-                        </div>
+                        Our first lab get-together with members of
+                        Dr. Wen Zhang’s lab. A wonderful opportunity
+                        to spend time together and celebrate
+                        the holiday season!
 
-                        <p class="news-text">
+                    </p>
 
-                            The Lyu Lab begins its independent
-                            research program at Center for Advanced Biotechnology and Medicine.
+                    <div class="news-event-gallery">
 
-                        </p>
+                        <img
+                            src="lyu-lab-group-photo.jpg"
+                            alt="Lyu Lab group photo"
+                            draggable="false"
+                            loading="lazy"
+                        >
+
+                        <img
+                            src="lyu-zhang-lab-lunch.jpg"
+                            alt="Lab get-together with members of the Zhang Lab"
+                            draggable="false"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- JULY 2026 -->
+
+            <article class="news-item">
+
+                <div class="news-date">
+                    July 2026
+                </div>
+
+                <div>
+
+                    <div class="news-title">
+                        Lyu Lab launches at Rutgers University
+                    </div>
+
+                    <p class="news-text">
+
+                        The Lyu Lab begins its independent
+                        research program at Center for Advanced
+                        Biotechnology and Medicine.
+
+                    </p>
+
                     <div class="news-gallery">
 
-            <img
-                src="Lab-whole view 1.jpg"
-                alt="Lyu Lab laboratory"
-                draggable="false"
-            >
+                        <img
+                            src="Lab-whole view 1.jpg"
+                            alt="Lyu Lab laboratory"
+                            draggable="false"
+                        >
 
-            <img
-                src="lab whoe view 2.jpg"
-                alt="Lyu Lab laboratory"
-                draggable="false"
-            >
+                        <img
+                            src="lab whoe view 2.jpg"
+                            alt="Lyu Lab laboratory"
+                            draggable="false"
+                        >
 
-            <img
-                src="lab seats.jpg"
-                alt="Lyu Lab laboratory seating"
-                draggable="false"
-            >
+                        <img
+                            src="lab seats.jpg"
+                            alt="Lyu Lab laboratory seating"
+                            draggable="false"
+                        >
 
-            <img
-                src="lab bench 1.jpg"
-                alt="Lyu Lab laboratory bench"
-                draggable="false"
-            >
+                        <img
+                            src="lab bench 1.jpg"
+                            alt="Lyu Lab laboratory bench"
+                            draggable="false"
+                        >
 
-            <img
-                src="lab bench 2.jpg"
-                alt="Lyu Lab laboratory bench"
-                draggable="false"
-            >
-
-        </div>
+                        <img
+                            src="lab bench 2.jpg"
+                            alt="Lyu Lab laboratory bench"
+                            draggable="false"
+                        >
 
                     </div>
 
-                </article>
+                </div>
 
+            </article>
 
-            </div>
 
         </div>
 
-    </section>
+    </div>
 
-
+</section>
 
     <!-- =========================================================
          JOIN US
